@@ -1,0 +1,74 @@
+<div class="main-container">
+  <h1>
+    Potepan Shareで<br>
+    まだ体験したことのない<br>
+    旅をしよう
+  </h1>
+  
+  <div class="search-form">
+    <%= form_with url: search_path, method: :get, local: true do |f| %>
+      <div class="area-search">
+        <%= f.text_field :keyword, placeholder: "エリア名を入力", class: 'search-input-form' %>
+      </div>
+      <div>
+        <%= f.submit "検索", class: 'search-button'%>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<h2 class="area-container-title">おすすめのエリア</h2>
+<div class="area-container">
+  <div class="area">
+  <%= form_with url: search_path, method: :get, local: true do |f| %>
+    <%= f.hidden_field :keyword, value: "東京" %>
+    <%= image_submit_tag("tokyo.jpg", class: 'search-icon', width: '310px', height: '460px') %>
+    <div class="area-text">
+      <h3>
+        東京<br>
+        📌 Tokyo
+      </h3>
+    </div>
+  <% end %>
+  </div>
+  <div class="area">
+    <%= form_with url: search_path, method: :get, local: true do |f| %>
+      <%= f.hidden_field :keyword, value: "大阪" %>
+      <%= image_submit_tag("osaka.jpg", class: 'search-icon', width: '310px', height: '460px') %>
+      <div class="area-text">
+        <h3>
+          大阪<br>
+          📌 Osaka
+        </h3>
+      </div>
+    <% end %>
+  </div>
+  <div class="area">
+    <%= form_with url: search_path, method: :get, local: true do |f| %>
+      <%= f.hidden_field :keyword, value: "京都" %>
+      <%= image_submit_tag("kyoto.jpg", class: 'search-icon', width: '310px', height: '460px') %>
+      <div class="area-text">
+        <h3>
+          京都<br>
+          📌 Kyoto
+        </h3>
+      </div>
+    <% end %>
+  </div>
+  <div class="area">
+    <%= form_with url: search_path, method: :get, local: true do |f| %>
+      <%= f.hidden_field :keyword, value: "札幌" %>
+      <%= image_submit_tag("sapporo.jpg", class: 'search-icon', width: '310px', height: '460px') %>
+      <div class="area-text">
+        <h3>
+          札幌<br>
+          📌 Sapporo
+        </h3>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+
+<%= render 'shared/footer' %>

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  checkin_date: 2023-02-04
+  checkout_date: 2023-02-04
+  guests: 1
+  stay_days: 1
+  total_price: 1
+
+two:
+  checkin_date: 2023-02-04
+  checkout_date: 2023-02-04
+  guests: 1
+  stay_days: 1
+  total_price: 1

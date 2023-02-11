@@ -1,0 +1,37 @@
+.edit-name-field input[type="text"] {
+  box-sizing: border-box;
+  width: 80%;
+  height: 45px;
+  border: 1px solid #a6a6a6;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 40px 0 16px 55px;
+}
+.edit-profile-field textarea {
+  box-sizing: border-box;
+  width: 80%;
+  height: 150px;
+  border: 1px solid #a6a6a6;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 10px 0 14px 22px;
+}
+.edit-profile-field, .edit-image-field, .edit-name-field {
+ display: flex;
+ align-items: center;
+}
+.edit-title {
+  margin-right: 50px;
+}
+.edit-image-field input[type="file"] {
+  display: none;
+}
+label.upload {
+  padding: 10px 70px;
+  cursor: pointer;
+  margin-left: 20px;
+  font-size: 13px;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.3));
+}

@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap"; 
+@import 'bootstrap-datetimepicker';
+.navbar:before,
+.navbar:after {
+    display: none;
+    content: none;
+}
+mark, .mark {
+    background-color: transparent;
+}
+.search-icon {
+  border-radius: 16px;
+}

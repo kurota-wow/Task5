@@ -1,0 +1,68 @@
+.backimage {
+  background-color: #ddd;
+  height: 100vh;
+  padding: 0 0 300px;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.container {
+  width: 45%;
+  margin: 0 auto;
+  padding: 50px 10px;
+  background-color: #fff;
+  min-width: 370px;
+  margin-top: 100px;
+}
+h2 {
+  font-weight: normal;
+  margin: 0 0 10px;
+}
+h2.center {
+  text-align: center;
+}
+.email-field label, .password-field label {
+  font-size: 15px;
+  color: rgb(65, 65, 65);
+}
+.email-field input[type="email"], .password-field input[type="password"], .name-field input[type="text"] {
+  box-sizing: border-box;
+  width: 100%;
+  height: 45px;
+  border: 1px solid #a6a6a6;
+  border-radius: 4px;
+  padding: 0 7px;
+  margin: 10px 0 14px;
+}
+.orange-btn input[type="submit"]{
+  width: 100%;
+  border-radius: 8px;
+  height: 60px;
+  margin-top: 10px;
+  border: none;
+  background-color: rgb(252, 136, 107);
+  color: #fff;
+  font-size: 17px;
+}
+.white-btn {
+  border: 1px solid #a6a6a6;
+  width: 100%;
+  color: rgb(65, 65, 65);
+  display: inline-block;
+  text-align: center;
+  border-radius: 8px;
+  height: 50px;
+  margin-top: 10px;
+  line-height: 50px;
+  font-size: 15px;
+}
+span.red {
+  color: red;
+  margin-left: 5px;
+}
+.field_with_errors {
+  display: contents;
+}

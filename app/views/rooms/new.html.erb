@@ -1,0 +1,31 @@
+<div class="room-container">
+  <h1>新規登録</h1>
+  <div class="room-section">
+    <%= form_for @room do |f| %>
+      <div class="form-group">
+        <%= f.label :room_name, "施設名"%><span class="red">*</span>
+        <%= f.text_field :room_name, placeholder: "ルーム名を入力", class: "rooms-form" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :room_details, "施設詳細"%><span class="red">*</span>
+        <%= f.text_area :room_details, placeholder: "施設詳細を入力", class: "rooms-form" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :fee, "料金"%><span class="red">*</span>
+        <%= f.text_field :fee, placeholder: "一日あたりの料金を入力", class: "rooms-form" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :address, "住所"%><span class="red">*</span>
+        <%= f.text_field :address, placeholder: "住所を入力", class: "rooms-form" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :image, "施設画像"%>
+        <label class="upload room_images">画像アップロード<%= f.file_field :image, autofocus: true %></label>
+      </div>
+      <div><%= f.submit "保存", class: "button orange" %></div>
+      <%= link_to "キャンセル", :back, class: "button reservation-cancel" %>
+    <% end %>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

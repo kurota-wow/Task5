@@ -1,0 +1,31 @@
+<div class="room-container">
+  <h1>施設情報の編集</h1>
+  <div class="room-section">
+    <%= form_for @room do |f| %>
+      <div class="form-group">
+        <%= f.label :room_name, "施設名"%><span class="red">*</span>
+        <%= f.text_field :room_name, class: "rooms-form" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :room_details, "施設詳細"%><span class="red">*</span>
+        <%= f.text_area :room_details, class: "rooms-form" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :fee, "料金"%><span class="red">*</span>
+        <%= f.text_field :fee, class: "rooms-form" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :address, "住所"%><span class="red">*</span>
+        <%= f.text_field :address, class: "rooms-form" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :image, "施設画像"%>
+        <label class="upload room_images">画像アップロード<%= f.file_field :image, autofocus: true %></label>
+      </div>
+      <div><%= f.submit "保存", class: "button orange" %></div>
+      <%= link_to "キャンセル", :back, class: "reservation-cancel button" %>
+    <% end %>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>
