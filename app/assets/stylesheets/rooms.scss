@@ -1,0 +1,242 @@
+// Place all the styles related to the Rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.room-container h1 {
+  font-weight: normal;
+  font-size: 26px;
+}
+.room-container {
+  width: 80%;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.form-group {
+  display: flex;
+  align-items: center;
+}
+.rooms-form {
+  width: 80%;
+  margin-left: auto
+}
+.form-group input[type="file"] {
+  display: none;
+}
+.form-group input[type="text"] {
+  height: 30px;
+  border: 1px solid #a6a6a6;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 20px;
+}
+.form-group textarea {
+  height: 90px;
+  border: 1px solid #a6a6a6;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 20px;
+}
+.form-group label.room_images {
+  margin-left: 80px;
+  margin-top: 20px;
+}
+.button {
+  border-radius: 16px;
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  margin-top: 20px;
+}
+.cancel {
+  display: block;
+  text-decoration: none;
+}
+.orange {
+  color: white;
+  border: none;
+  background-color: orange;
+}
+.white {
+  border: 1px solid #eee;
+  box-sizing: border-box;
+}
+
+.room_container {
+  width: 95%;
+  margin: 0 auto;
+  padding: 20px;
+}
+.room-contents {
+  display: flex;
+  padding: 20px;
+}
+.room-details-header {
+  padding: 10px 20px;
+  font-size: 20px;
+}
+.room_details-contents {
+  display: flex;
+  justify-content: space-between;
+}
+.room_details-contents ul {
+  padding: 0;
+  margin: 0;
+}
+.room_details-contents ul li {
+  margin-bottom: 10px;
+}
+.room-details-header {
+  display: flex;
+}
+.room-edit {
+  margin-left: auto;
+}
+.room-image {
+  width: 40%;
+}
+.room-details {
+  width: 60%;
+  background-color: rgb(255, 243, 229);
+  margin-left: 30px;
+  padding: 20px;
+}
+
+.new-reservation-container form {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.reservation-textforms input[type="text"],input[type="date"] {
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+}
+.reservation-textforms {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-size: 16px;
+  color: gray;
+}
+.room-name {
+  font-size: 30px;
+  color: #bbb;
+}
+.room-address {
+  font-size: 15px;
+  color: #bbb;
+}
+.room-comments {
+  margin-top: 30px;
+}
+.room-fee {
+  color: rgb(252, 136, 107);
+  margin: 0;
+  font-size: 25px;
+}
+.star {
+  color: rgb(251, 201, 0);
+}
+.search-wrapper {
+  display: flex;
+  background-color: #f3f3f3;
+  height: 120px;
+  width: 100%;
+  align-items: center;
+  
+}
+.keyword-search {
+  width: 40%;
+  margin: 0 auto;
+}
+.keyword-search form{
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.keyword-search input[type="text"] {
+  display: inline-block;
+  width: 50%;
+  height: 50px;
+  padding: 10px;
+  line-height: 40px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  margin-left: 50px;
+}
+.keyword-search input[type="submit"] {
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  line-height: 30px;
+  border-radius: 4px;
+  background: #ccc;
+  font-size: 15px;
+  border: none;
+}
+.roomlist-container {
+}
+.roomlist-contents {
+  padding: 20px;
+  width: 90%;
+  margin: 0 auto;
+}
+.roomlist-wrapper {
+  background-color: rgb(255, 243, 229);
+  display: inline-block;
+  width: 30%;
+  border-radius: 16px;
+  margin: 10px;
+}
+.roomlist-wrapper .roomlist-size {
+  width: 100%;
+  height: 30%;
+  border-radius: 16px 16px 0 0;
+  
+}
+.roomlist-details-wrapper {
+  padding: 20px;
+}
+.roomlist-name {
+  font-size: 30px;
+  color: #aaa;
+}
+.roomlist-address {
+  font-size: 17px;
+  color: #aaa;
+}
+.roomlist-details-wrapper .star {
+  font-size: 20px;
+  margin-top: 10px;
+}
+.roomlist-details {
+  margin-top: 17px;
+  font-size: 16px;
+}
+.roomlist-fee {
+  color: orange;
+  font-size: 27px;
+  margin-top: 20px;
+}
+.roomlist-button {
+  color: #fff;
+  background-color: orange;
+  border-radius: 16px;
+  height: 60px;
+  text-align: center;
+  display: inline-block;
+  width: 90%;
+  margin: 17px 10px;
+  border: none;
+  line-height: 60px;
+}
+.reservation-button {
+  height: 60px;
+  margin: 30px 0;
+  font-size: 20px;
+}
+.roomlist-count {
+  font-size: 25px;
+  margin: 30px;
+}

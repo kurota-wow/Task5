@@ -1,0 +1,41 @@
+<h1 class="list-title">予約済み一覧</h1>
+ 
+ <table class="list-table">
+   <thead>
+     <tr>
+       <th>画像</th>
+       <th>施設名</th>
+       <th>紹介文</th>
+       <th>合計料金</th>
+       <th>チェックイン</th>
+       <th>チェックアウト</th>
+       <th>予約確定日時</th>
+     </tr>
+   </thead>
+ 
+   <tbody>
+       <% @reservations.each do |reservation| %>
+       <tr>
+         <td>
+          <% if reservation.room.image.attached? %>
+            <%= image_tag reservation.room.image, size: "100x80"%>
+          <% else %>
+            <%= image_tag 'default.png', size: "100x80"%>
+          <% end %>
+         </td>
+         <td><%= link_to reservation.room.room_name, room_path(reservation.room_id) %></td>
+         <td><%= reservation.room.room_details %></td>
+         <td>¥<%= reservation.total_price %></td>
+         <td><%= reservation.checkin_date.strftime("%Y/%m/%d") %></td>
+         <td><%= reservation.checkout_date.strftime("%Y/%m/%d") %></td>
+         <td><%= reservation.created_at.to_s(:datetime_jp) %></td>
+         <td><%= link_to "編集", edit_reservation_path(reservation) %></td>
+         <td><%= link_to "削除", "/reservations/#{reservation.id}/destroy" , method: :delete, data: { confirm: "本当に削除しますか？" } %></td>
+       </tr>
+       <% end %>
+     
+   </tbody>
+ </table>
+ 
+ <%= render 'shared/footer' %>
+ 

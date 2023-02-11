@@ -1,0 +1,51 @@
+// Place all the styles related to the Reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+h1.list-title {
+  font-size: 30px;
+  margin: 40px 0 40px 20px;
+}
+table.list-table {
+  width: 95%;
+  margin: 0 auto;
+}
+table.list-table thead {
+  border-bottom: 1px solid;
+}
+table.list-table thead tr th {
+  padding-bottom: 20px;
+}
+table.list-table tbody tr td {
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+  font-size: 16px;
+}
+.reservation-edit-wrapper {
+  padding: 50px;
+}
+.reservation-cancel {
+  width: 100%;
+  display: inline-block;
+  border: 1px solid #ddd;
+}
+.room-section-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.reservation-container {
+  width: 70%;
+  margin: 0 auto;
+}
+.room-section-wrapper form{
+  margin: 0;
+  padding: 0;
+}
+.room-section-list ul {
+  margin: 0;
+  padding: 0;
+}
+.room-section-list ul li {
+  margin: 30px 0;
+  font-size: 22px;
+}

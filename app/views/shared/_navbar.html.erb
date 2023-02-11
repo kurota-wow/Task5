@@ -1,0 +1,46 @@
+<nav class="navbar-style">
+  <div class="navbar">
+    <a href="/" class="left-menu">
+      <%= image_tag 'logo.png', size: "250x35" %>
+    </a>
+    <% if user_signed_in? %>
+      <div>
+        <ul class="right-menu">
+          <li>
+            <% if current_user.avatar.attached? %>
+              <%= image_tag current_user.avatar, class: 'userimage', size: "40x40" %>
+            <% else %>
+              <%= image_tag 'icon.png', size: "40x40" %>
+            <% end %>
+          </li>
+          <li><%= current_user.name %></li>
+          <li class="mark">∨</li>
+        </ul>
+      </div>
+    <% else %>
+      <div>
+        <%= link_to "ログイン", new_user_session_path, class: 'post login-button' %>
+        <%= link_to "新規登録", new_user_registration_path, class: 'post new-button' %>
+      </div>
+    <% end %>
+    
+  </div>
+  <% if user_signed_in? %>
+    <div class="dropdown-list">
+      <ul>
+        <li class="new-menu">
+          <%= link_to "施設の新規登録", new_room_path %>
+        </li>
+        <li><%= link_to "予約済み一覧", reservations_path %></li>
+        <li><%= link_to "登録済み一覧", rooms_path %></li>
+        <li>
+          <%= link_to "アカウント設定", users_path(current_user) %>
+        </li>
+        <li class="logout-menu">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+</nav>
+<%= javascript_pack_tag 'navbar' %>

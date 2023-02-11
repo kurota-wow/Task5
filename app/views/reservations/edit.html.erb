@@ -1,0 +1,44 @@
+<div class="reservation-edit-wrapper">
+  <h1>再予約する</h1>
+  <div class="room-contents">
+    <div class="room-image">
+      <p><%= image_tag @reservations.room.image, size: "400x250"%></p>
+    </div>
+    
+    <div class="room-details">
+      <div class="room_details-contents">
+         <ul>
+           <li class="room-name"><%= @reservations.room.room_name %></li>
+           <li class="room-address"><%= @reservations.room.address %></li>
+           <li class="star">★️ ★ ★ ★ ★</li>
+           <li class="room-comments"><%= @reservations.room.room_details %></li>
+         </ul>
+         <p class="room-fee">¥ <%= @reservations.room.fee %> ~</p>
+      </div>
+      <div class="new-reservation-container">
+        <%= form_for @reservations, url: edit_confirm_path(@reservations), method: :post do |f| %>
+        <%= f.hidden_field :room_id, value: @reservations.room_id %>
+        <%= f.hidden_field :user_id, value: @reservations.user_id %>
+          <div class="reservation-textforms">
+            <div class="forms date" id="picker">
+              <%= f.label :checkin_date, "チェックイン"%><br />
+              <%= f.date_field :checkin_date, class: "reservation-form", id: "picker" %>
+            </div>
+            <div class="forms date"  id="datetimepicker7">
+              <%= f.label :checkout_date, "チェックアウト"%><br />
+              <%= f.date_field :checkout_date, class: "reservation-form", id: "picker" %>
+            </div>
+            <div class="forms">
+              <%= f.label :guests, "人数"%><br />
+              <%= f.text_field :guests, class: "reservation-form" %>
+            </div>
+          </div>
+        <%= f.submit "再予約する", class: "button orange" %>
+        <%= link_to "キャンセル", :back, class: "button reservation-cancel" %>
+        <% end %>
+       </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

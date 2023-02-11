@@ -1,0 +1,16 @@
+<div class="search-wrapper">
+  <div class="keyword-search">
+    <%= form_with url: search_path, method: :get, local: true do |f| %>
+      <%= f.text_field :keyword, placeholder: "エリア名を入力" %>
+      <%= f.hidden_field :method, value: 'area' %>
+      <%= f.submit "検索" %>
+    <% end %>
+  </div>
+  <div class="keyword-search">
+    <%= form_with url: search_path, method: :get, local: true do |f| %>
+      <%= f.text_field :keyword, placeholder: "キーワード名を入力" %>
+      <%= f.hidden_field :method, value: 'key' %>
+      <%= f.submit "検索" %>
+    <% end %>
+  </div>
+</div>

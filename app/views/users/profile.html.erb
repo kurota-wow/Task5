@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <div class="user-menu">
+    <h2>設定</h2>
+    <ul>
+      <li><%= link_to "アカウント", users_path(current_user), class: 'account' %></li>
+      <li><%= link_to "プロフィール", profile_users_path, class: 'account' %></li>
+    </ul>
+  </div>
+  <div class="user-details">
+    <h2 class="border">
+      プロフィール
+      <%= link_to "編集", edit_user_registration_path %>
+    </h2>
+    <div class="user-details-menu">
+      <div>
+        <p class="details-title">アイコン画像</p>
+        <p class="details-title">名前</p>
+        <p class="details-title">自己紹介</p>
+      </div>
+      
+      <div class="detail-contents">
+        <ul>
+          <li>
+            <% if current_user.avatar.attached? %>
+              <%= image_tag current_user.avatar, class: 'detail-image', size: "70x70" %>
+            <% else %>
+              <%= image_tag 'icon.png', size: "70x70" %>
+            <% end %>
+          </li>
+          
+          <li><%= @user.name %></li>
+          <li class="profile-contents"><%= @user.profile %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

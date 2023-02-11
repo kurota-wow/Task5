@@ -1,0 +1,38 @@
+<div class="reservation-container">
+  <h1>予約内容の確認</h1>
+  <div class="room-section-wrapper">
+    <div class="room-section-list">
+      <ul class="list-left">
+        <li>チェックイン</li>
+        <li>チェックアウト</li>
+        <li>日数</li>
+        <li>人数</li>
+        <li>お支払い金額</li>
+      </ul>
+    </div>
+    <div class="room-section-list">
+      <%= form_with model:@reservation ,url: {controller: 'reservations', action: 'update' } do |f| %>
+        <%= f.hidden_field :room_id, value: @reservation.room_id %>
+        <%= f.hidden_field :user_id, value: @reservation.user_id %>
+        <%= f.hidden_field :guests, value: @reservation.guests %>
+        <%= f.hidden_field :checkin_date, value: @reservation.checkin_date %>
+        <%= f.hidden_field :checkout_date, value: @reservation.checkout_date %>
+        <%= f.hidden_field :total_price, value: @reservation.total_price %>
+      　<ul class="list-right">
+      　   <li><%= @reservation.checkin_date%></li>
+          <li><%= @reservation.checkout_date%></li>
+          <li><%= @reservation.stay_days%></li>
+          <li><%= @reservation.guests%></li>
+          <li><%= @reservation.total_price%></li>
+      　</ul>
+    </div>
+  </div>
+  <p>上記内容で正しければ「確定」ボタンを押してください。</p>
+  <div>
+    <%= f.submit "予約を確定", class: "button orange" %>
+    <% end %>
+    <%= link_to "キャンセル", :back, class: "button reservation-cancel" %>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

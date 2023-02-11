@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <div class="user-menu">
+    <h2>設定</h2>
+    <ul>
+      <li><%= link_to "アカウント", users_path(current_user), class: 'account' %></li>
+      <li><%= link_to "プロフィール", profile_users_path, class: 'account' %></li>
+    </ul>
+  </div>
+  <div class="user-details">
+    <h2 class="border">
+      アカウント
+      <%= link_to "編集", edit_user_registration_path %>
+    </h2>
+    <div class="user-details-menu">
+      <div>
+        <p class="detail-title">メールアドレス</p>
+        <p class="detail-title">パスワード</p>
+      </div>
+      
+      <div class="detail-contents">
+        <ul>
+          <li><%= @user.email %></li>
+          <li>*********</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= render 'shared/footer' %>

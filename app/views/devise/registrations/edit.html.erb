@@ -1,0 +1,94 @@
+<% if request.referer&.include?("/users/profile") %>
+  <div class="wrapper">
+    <div class="user-menu">
+      <h2>設定</h2>
+      <ul>
+        <li><%= link_to "アカウント", users_path(current_user), class: 'account' %></li>
+        <li><%= link_to "プロフィール", profile_users_path, class: 'account' %></li>
+      </ul>
+    </div>
+    <div class="user-details">
+      <h2 class="border">
+        プロフィール
+      </h2>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="field edit-image-field">
+            <%= f.label :avatar, "アイコン画像", class: "edit-title" %>
+            <% if current_user.avatar.attached? %>
+              <%= image_tag current_user.avatar, class: 'detail-image', size: "70x70" %>
+            <% else %>
+              <%= image_tag 'icon.png', size: "70x70" %>
+            <% end %>
+            <label class="upload">画像アップロード<%= f.file_field :avatar, autofocus: true %></label>
+          </div>
+          
+          <div class="field edit-name-field">
+            <%= f.label :name, "名前", class:  "edit-title" %>
+            <%= f.text_field :name, autofocus: true %>
+          </div>
+          
+          <div class="field edit-profile-field">
+            <%= f.label :profile, class:  "edit-title profile-title" %>
+            <%= f.text_area :profile, autofocus: true %>
+          </div>
+        
+          <div class="button-wrapper">
+            <%= link_to "キャンセル", :back ,class: "cancel"%>
+            <div class="actions">
+              <%= f.submit "保存" %>
+            </div>
+          </div>
+        <% end %>
+    </div>
+  </div>
+  <%= render 'shared/footer' %>
+<% else %>
+  <div class="wrapper">
+    <div class="user-menu">
+      <h2>設定</h2>
+      <ul>
+        <li><%= link_to "アカウント", users_path(current_user), class: 'account' %></li>
+        <li><%= link_to "プロフィール", profile_users_path, class: 'account' %></li>
+      </ul>
+    </div>
+    <div class="user-details">
+      <h2 class="border">
+        アカウント
+      </h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        
+        <div class="field edit-email-field">
+          <%= f.label :email, class: "edit-title" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+        </div>
+        
+        <div class="field">
+          <%= f.label :password %> <br /><span>(※変更する場合のみ)</span>
+          <%= f.password_field :password, autocomplete: "new-password" %>
+        </div>
+        
+        <div class="field">
+          <%= f.label :password_confirmation %><br /><span>(※変更する場合のみ)</span>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :current_password %>
+          <%= f.password_field :current_password, autocomplete: "current-password" %>
+        </div>
+        <div class="button-wrapper">
+          <%= link_to "キャンセル", :back, class: "cancel" %>
+          <div class="actions">
+            <%= f.submit "保存" %>
+          </div>
+        </div>
+        
+      <% end %>
+    
+      
+    </div>
+  </div>
+  <%= render 'shared/footer' %>
+<% end %>
